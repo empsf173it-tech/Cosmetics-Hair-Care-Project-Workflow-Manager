@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+    <defs>
+        <linearGradient id="auraeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#eedcc0"/>
+            <stop offset="50%" stop-color="#d4a373"/>
+            <stop offset="100%" stop-color="#9e392b"/>
+        </linearGradient>
+        <linearGradient id="auraeGold" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#fdfbf7"/>
+            <stop offset="100%" stop-color="#eedcc0"/>
+        </linearGradient>
+    </defs>
+    <!-- Outer Elegant Ring with Breaks -->
+    <circle cx="50" cy="50" r="46" stroke="url(#auraeGrad)" stroke-width="2" stroke-dasharray="140 15 80 15"/>
+    <circle cx="50" cy="50" r="41" stroke="#eedcc0" stroke-width="0.75" stroke-opacity="0.6"/>
+
+    <!-- Central Monogram & Botanical Hair Silhouette -->
+    <!-- Stylized 'A' Arch with Hair Wave Motif -->
+    <path d="M50 16 L29 78 H38 L43.5 61 H56.5 L62 78 H71 L50 16 Z M46 53 L50 38 L54 53 H46 Z" fill="url(#auraeGold)"/>
+    
+    <!-- Flowing Hair & Botanical Strand Swirl -->
+    <path d="M50 20 C54 28 66 36 65 48 C64 58 53 62 47 67 C41 72 38 78 40 84 C42 88 47 88 51 86 C58 83 62 74 61 68" stroke="url(#auraeGrad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    
+    <!-- Radiance Sparkle Accents -->
+    <path d="M50 10 L52 14 L56 16 L52 18 L50 22 L48 18 L44 16 L48 14 Z" fill="#eedcc0"/>
+    <circle cx="73" cy="32" r="2" fill="#d4a373"/>
+    <circle cx="27" cy="35" r="1.5" fill="#eedcc0"/>
+</svg>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURAÉ | Luxury Hair Care &amp; Cosmetics Atelier</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description"
+        content="AURAÉ Atelier offers bespoke hair care rituals, organic scalp therapies, and luxury cosmetics in a serene, high-end sanctuary.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#331d17',
+                        secondary: '#fdfbf7',
+                        neutral: '#faf6f0',
+                        accent: '#9e392b',
+                        'accent-hover': '#7f291e',
+                        highlight: '#eedcc0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="overflow-x-hidden antialiased bg-white text-stone-800">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 header-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group" aria-label="AURAÉ Home">
+                    <div class="w-11 h-11 rounded-xl bg-[#331d17] flex items-center justify-center p-1.5 border border-stone-800 shadow-md group-hover:scale-105 group-hover:border-accent transition-all duration-300">
+                        <img src="assets/images/logo.svg" alt="AURAÉ Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-[0.1em] text-primary group-hover:text-accent transition-colors">AURAÉ</span>
+                        <span class="text-[9px] uppercase tracking-[0.25em] font-semibold text-stone-600">Hair Care &amp; Cosmetics</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden xl:flex space-x-8 2xl:space-x-12 items-center" aria-label="Main Navigation">
+                    <a href="index.html"
+                        class="text-accent font-semibold text-sm tracking-wide relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-accent">Home</a>
+                    <a href="about.html"
+                        class="text-stone-700 font-medium text-sm tracking-wide hover:text-accent transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left">About</a>
+                    <a href="services.html"
+                        class="text-stone-700 font-medium text-sm tracking-wide hover:text-accent transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left">Services</a>
+                    <a href="pricing.html"
+                        class="text-stone-700 font-medium text-sm tracking-wide hover:text-accent transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left">Pricing</a>
+                    <a href="aftercare.html"
+                        class="text-stone-700 font-medium text-sm tracking-wide hover:text-accent transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left">Aftercare</a>
+                    <a href="contact.html"
+                        class="text-stone-700 font-medium text-sm tracking-wide hover:text-accent transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden xl:flex items-center gap-4">
+                    <a href="contact.html" class="btn-primary">Book Consultation</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-stone-800" aria-expanded="false" aria-label="Toggle Menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden xl:hidden fixed inset-0 z-40 bg-white pt-24 px-6 overflow-y-auto w-full h-full border-t border-stone-200">
+        <nav class="flex flex-col space-y-6" aria-label="Mobile Navigation">
+            <a href="index.html" class="text-2xl font-serif font-bold text-accent">Home</a>
+            <a href="about.html" class="text-2xl font-serif text-stone-800 hover:text-accent transition-colors">About</a>
+            <a href="services.html" class="text-2xl font-serif text-stone-800 hover:text-accent transition-colors">Services</a>
+            <a href="pricing.html" class="text-2xl font-serif text-stone-800 hover:text-accent transition-colors">Pricing</a>
+            <a href="aftercare.html" class="text-2xl font-serif text-stone-800 hover:text-accent transition-colors">Aftercare</a>
+            <a href="contact.html" class="text-2xl font-serif text-stone-800 hover:text-accent transition-colors">Contact</a>
+
+            <div class="pt-8 border-t border-stone-200 flex flex-col gap-4">
+                <a href="contact.html" class="btn-primary w-full text-center">Book Consultation</a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- SECTION 1: LUXURY HERO -->
+        <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-secondary">
+            <!-- Decorative Shapes -->
+            <div class="absolute top-0 right-0 w-[42rem] h-[42rem] bg-highlight/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-rose-100/50 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center">
+
+                    <!-- Content -->
+                    <div class="pt-8 lg:pt-0" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-stone-200 rounded-full shadow-sm mb-6">
+                            <div class="flex text-amber-600">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wider text-stone-800 uppercase">
+                                Trichology-Grade &bull; Botanical Formulations
+                            </span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-primary mb-6 leading-[1.12]">
+                            Lustrous Hair.<br>
+                            <span class="text-accent italic">Radiant Cosmetics.</span>
+                        </h1>
+
+                        <p class="text-lg md:text-xl text-stone-700 font-normal mb-8 max-w-xl leading-relaxed">
+                            Discover a private sanctuary where transformative hair rituals meet clean luxury cosmetics. We combine cutting-edge scalp science with organic botanical formulations for hair that shines and beauty that elevates.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="contact.html" class="btn-primary shadow-lg hover:shadow-xl">Book a Treatment</a>
+                            <a href="services.html" class="btn-outline">Explore Rituals</a>
+                        </div>
+
+                        <div class="flex items-center gap-6 pt-4 border-t border-stone-200 text-sm text-stone-700">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
+                                <span class="font-medium">100% Cruelty-Free</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
+                                <span class="font-medium">Clean Beauty Certified</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
+                                <span class="font-medium">Bespoke Formulas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual -->
+                    <div class="relative h-[440px] lg:h-[580px] w-full" data-aos="fade-left" data-aos-duration="1200">
+                        <div class="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069&auto=format&fit=crop"
+                                alt="Luxury Hair Care and Cosmetics Studio Model"
+                                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-[2s]">
+                        </div>
+
+                        <!-- Floating Hair Badge -->
+                        <div class="absolute -left-4 sm:-left-6 bottom-12 bg-white p-5 rounded-2xl shadow-xl border border-stone-200 flex items-center gap-4 animate-bounce-slow"
+                            style="animation: float 6s ease-in-out infinite;">
+                            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-primary shrink-0">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-stone-600 uppercase tracking-widest font-bold mb-0.5">Signature Service</p>
+                                <p class="font-serif text-lg font-bold text-primary">Stem-Cell Keratin Infusion</p>
+                            </div>
+                        </div>
+                        <style>
+                            @keyframes float {
+                                0% { transform: translateY(0px); }
+                                50% { transform: translateY(-12px); }
+                                100% { transform: translateY(0px); }
+                            }
+                        </style>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1.5: STATS -->
+        <section class="bg-secondary pb-16 pt-6 border-b border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-stone-200">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-4xl md:text-5xl font-serif font-bold text-accent mb-1">8k+</div>
+                        <div class="text-sm text-stone-700 uppercase tracking-wider font-semibold">Treated Clients</div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-4xl md:text-5xl font-serif font-bold text-accent mb-1">14+</div>
+                        <div class="text-sm text-stone-700 uppercase tracking-wider font-semibold">Years Experience</div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-4xl md:text-5xl font-serif font-bold text-accent mb-1">100%</div>
+                        <div class="text-sm text-stone-700 uppercase tracking-wider font-semibold">Clean Ingredients</div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-4xl md:text-5xl font-serif font-bold text-accent mb-1">4.97</div>
+                        <div class="text-sm text-stone-700 uppercase tracking-wider font-semibold">Client Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SIGNATURE SERVICES -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-accent uppercase tracking-widest text-sm font-bold mb-3 block">Bespoke Rituals</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-5">Signature Hair Care &amp; Cosmetics</h2>
+                    <p class="text-stone-700 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Precision haircuts, peptide bond therapies, scalp micro-exfoliation, and couture cosmetics tailored to your skin tone and hair vitality.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Service Card 1 -->
+                    <a href="services.html" class="group block bg-secondary p-5 rounded-3xl border border-stone-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="image-wrapper rounded-2xl aspect-[4/3] mb-5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop"
+                                alt="Keratin Smooth and Molecular Hair Repair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+                                Molecular Keratin Repair
+                            </h3>
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-stone-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Restorative peptide therapy that rebuilds broken disulphide bonds, banishes frizz, and restores silk-smooth elasticity for up to 5 months.
+                        </p>
+                    </a>
+
+                    <!-- Service Card 2 -->
+                    <a href="services.html" class="group block bg-secondary p-5 rounded-3xl border border-stone-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="image-wrapper rounded-2xl aspect-[4/3] mb-5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=2071&auto=format&fit=crop"
+                                alt="Trichology Scalp Detox & Follicle Therapy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+                                Scalp Trichology Detox
+                            </h3>
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-stone-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Japanese micro-mist steam, salicylic exfoliation, and rosemary root infusion designed to purify buildup and encourage dense hair growth.
+                        </p>
+                    </a>
+
+                    <!-- Service Card 3 -->
+                    <a href="services.html" class="group block bg-secondary p-5 rounded-3xl border border-stone-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="image-wrapper rounded-2xl aspect-[4/3] mb-5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2074&auto=format&fit=crop"
+                                alt="Couture Balayage and Gloss Toning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+                                Couture Balayage &amp; Gloss
+                            </h3>
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-stone-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Hand-painted dimensional color infused with amino acids and non-ammonia gloss glaze for radiant, multidimensional shine.
+                        </p>
+                    </a>
+
+                    <!-- Service Card 4 -->
+                    <a href="services.html" class="group block bg-secondary p-5 rounded-3xl border border-stone-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <div class="image-wrapper rounded-2xl aspect-[4/3] mb-5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=2070&auto=format&fit=crop"
+                                alt="Clean Luxury Cosmetics & Makeup Artistry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+                                Couture Cosmetics &amp; Glam
+                            </h3>
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-stone-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Editorial and event makeup utilizing hypoallergenic, breathable mineral foundations, antioxidant serums, and custom undertone matching.
+                        </p>
+                    </a>
+
+                    <!-- Service Card 5 -->
+                    <a href="services.html" class="group block bg-secondary p-5 rounded-3xl border border-stone-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                        <div class="image-wrapper rounded-2xl aspect-[4/3] mb-5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1571290274567-27a9446d4a8e?q=80&w=2070&auto=format&fit=crop"
+                                alt="Deep Hydration Hair Spa & Scalp Massage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+                                Moisture Caviar Hair Spa
+                            </h3>
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-stone-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Deep sea marine extracts, biomimetic ceramide infusion, and 20-minute acupressure head massage to restore depleted moisture reservoirs.
+                        </p>
+                    </a>
+
+                    <!-- Service Card 6 -->
+                    <a href="services.html" class="group block bg-secondary p-5 rounded-3xl border border-stone-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                        <div class="image-wrapper rounded-2xl aspect-[4/3] mb-5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop"
+                                alt="Lash & Brow Cosmetic Artistry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+                                Brow &amp; Lash Architecture
+                            </h3>
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-stone-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Keratin lash lamination, hybrid brow tinting, and botanical nourishing serums for naturally defined, high-impact facial framing.
+                        </p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE AURAÉ DIFFERENCE -->
+        <section class="py-24 bg-secondary border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                    <!-- Image -->
+                    <div class="relative" data-aos="fade-right">
+                        <div class="relative h-[560px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=1976&auto=format&fit=crop"
+                                alt="Master Hair Stylist and Trichologist" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Decorative element -->
+                        <div class="absolute -right-6 top-16 w-20 h-20 bg-accent rounded-2xl flex items-center justify-center shadow-lg transform rotate-6 border-2 border-white">
+                            <i data-lucide="award" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div data-aos="fade-left">
+                        <span class="text-accent uppercase tracking-widest text-sm font-bold mb-3 block">
+                            The AURAÉ Standard
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">
+                            Where Scientific Hair Care Meets Pure Cosmetics
+                        </h2>
+                        <p class="text-stone-700 text-lg mb-8 leading-relaxed">
+                            We believe luxury beauty should never compromise scalp biology or long-term hair wellness. Every formula we apply is vetted for purity, efficacy, and sensory delight.
+                        </p>
+
+                        <div class="space-y-6">
+
+                            <div class="flex gap-4 items-start">
+                                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-accent shadow-sm shrink-0 border border-stone-200">
+                                    <i data-lucide="flask-conical" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-serif font-bold text-primary mb-1">Trichological Diagnostics</h3>
+                                    <p class="text-stone-700 text-sm leading-relaxed">
+                                        High-magnification microscopic scalp analysis to determine porosity, sebum balance, and follicle strength prior to any service.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-accent shadow-sm shrink-0 border border-stone-200">
+                                    <i data-lucide="sparkle" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-serif font-bold text-primary mb-1">Clean &amp; Bio-Identical Cosmetics</h3>
+                                    <p class="text-stone-700 text-sm leading-relaxed">
+                                        Formulated without harsh sulfates, silicones, synthetic parabens, or heavy phthalates. Enriched with cold-pressed botanical oils.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-accent shadow-sm shrink-0 border border-stone-200">
+                                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-serif font-bold text-primary mb-1">Private Sensory Suites</h3>
+                                    <p class="text-stone-700 text-sm leading-relaxed">
+                                        Unwind in private styling suites with ergonomic reclining wash basins, noise-dampened acoustics, and customized herbal tea pairings.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-10 pt-6 border-t border-stone-300">
+                            <a href="about.html" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+                                Discover Our Heritage &amp; Ethos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HAIR & COSMETICS ROUTINE SELECTOR -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-accent uppercase tracking-widest text-sm font-bold mb-3 block">Personalized Care</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Hair Vitality &amp; Cosmetic Diagnostic</h2>
+                    <p class="text-stone-700 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Every hair texture and skin undertone requires distinct care. Select your primary beauty focus below to review our trichologist-approved regimen.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Diagnostic Tabs -->
+                    <div class="lg:col-span-4 flex flex-col gap-3" data-aos="fade-right">
+                        <button
+                            class="guide-tab text-left px-6 py-4 rounded-xl font-serif text-lg font-bold transition-all border border-stone-200 bg-secondary text-primary shadow-sm"
+                            onclick="switchGuide('repair')">
+                            1. Dry &amp; Compromised Hair
+                        </button>
+                        <button
+                            class="guide-tab text-left px-6 py-4 rounded-xl font-serif text-lg font-semibold transition-all border border-transparent hover:bg-stone-50 text-stone-600"
+                            onclick="switchGuide('scalp')">
+                            2. Scalp Sensitivity &amp; Thinning
+                        </button>
+                        <button
+                            class="guide-tab text-left px-6 py-4 rounded-xl font-serif text-lg font-semibold transition-all border border-transparent hover:bg-stone-50 text-stone-600"
+                            onclick="switchGuide('color')">
+                            3. Color-Treated &amp; Bleached
+                        </button>
+                        <button
+                            class="guide-tab text-left px-6 py-4 rounded-xl font-serif text-lg font-semibold transition-all border border-transparent hover:bg-stone-50 text-stone-600"
+                            onclick="switchGuide('cosmetic')">
+                            4. Radiant Skin &amp; Clean Makeup
+                        </button>
+                    </div>
+
+                    <!-- Content Panel Area -->
+                    <div class="lg:col-span-8 bg-secondary rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200 relative overflow-hidden min-h-[380px]"
+                        data-aos="fade-left">
+
+                        <!-- Panel: Repair -->
+                        <div id="guide-repair" class="guide-panel opacity-100 transition-opacity duration-300">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-rose-100 text-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Bond Therapy</span>
+                                <span class="bg-amber-100 text-stone-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Lipid Seal</span>
+                            </div>
+                            <h3 class="text-3xl font-serif font-bold text-primary mb-3">Molecular Bond Reconstruction</h3>
+                            <p class="text-stone-700 mb-6 leading-relaxed">
+                                Chemical processing and thermal styling deplete the inner keratin cortex. Our treatment uses bio-fermented peptide chains that penetrate the cortex to reconnect broken peptide bonds, increasing tensile strength by 84%.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-stone-200">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">Recommended In-Studio:</span>
+                                    <p class="text-sm font-semibold text-primary">K18 Infusion + Keratin Nanoplastia</p>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">At-Home Maintenance:</span>
+                                    <p class="text-sm font-semibold text-primary">AURAÉ Ceramide Mask (Weekly)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel: Scalp (Hidden) -->
+                        <div id="guide-scalp" class="guide-panel hidden opacity-0 transition-opacity duration-300">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-rose-100 text-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Follicle Rejuvenation</span>
+                                <span class="bg-amber-100 text-stone-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Microcirculation</span>
+                            </div>
+                            <h3 class="text-3xl font-serif font-bold text-primary mb-3">Scalp Balancing &amp; Follicle Energizing</h3>
+                            <p class="text-stone-700 mb-6 leading-relaxed">
+                                Healthy hair roots stem from a balanced scalp microbiome. Our specialized trichological scrub eliminates sebum plugs, hydrates micro-dryness, and infuses active caffeine and rosemary peptides to stimulate dormant follicles.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-stone-200">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">Recommended In-Studio:</span>
+                                    <p class="text-sm font-semibold text-primary">Japanese Head Spa Detox &amp; LED Therapy</p>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">At-Home Maintenance:</span>
+                                    <p class="text-sm font-semibold text-primary">Rosemary Scalp Drops + Bamboo Massager</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel: Color (Hidden) -->
+                        <div id="guide-color" class="guide-panel hidden opacity-0 transition-opacity duration-300">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-rose-100 text-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Color Longevity</span>
+                                <span class="bg-amber-100 text-stone-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">UV Shield</span>
+                            </div>
+                            <h3 class="text-3xl font-serif font-bold text-primary mb-3">Acidic Gloss &amp; UV Oxidation Shield</h3>
+                            <p class="text-stone-700 mb-6 leading-relaxed">
+                                Bleached and highlighted strands require low pH acidic sealants to lock cuticles tight. We infuse tone-refreshing micro-pigments with argan oil to prevent brassiness and seal in mirror-like reflection.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-stone-200">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">Recommended In-Studio:</span>
+                                    <p class="text-sm font-semibold text-primary">Demi-Permanent Acidic Color Glaze</p>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">At-Home Maintenance:</span>
+                                    <p class="text-sm font-semibold text-primary">Sulfate-Free Violet or Amber Bath</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel: Cosmetic (Hidden) -->
+                        <div id="guide-cosmetic" class="guide-panel hidden opacity-0 transition-opacity duration-300">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-rose-100 text-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Clean Cosmetics</span>
+                                <span class="bg-amber-100 text-stone-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Non-Comedogenic</span>
+                            </div>
+                            <h3 class="text-3xl font-serif font-bold text-primary mb-3">Dermatological Cosmetic Prep &amp; Artistry</h3>
+                            <p class="text-stone-700 mb-6 leading-relaxed">
+                                Our cosmetics suite prepares sensitive skin with hyaluronic priming serums, botanical tinted moisturizers, and micronized minerals that enhance your natural glow without clogging pores or settling into fine lines.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-stone-200">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">Recommended In-Studio:</span>
+                                    <p class="text-sm font-semibold text-primary">Red-Carpet Glow Skin Prep &amp; Couture Makeup</p>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-stone-600 block mb-1">At-Home Maintenance:</span>
+                                    <p class="text-sm font-semibold text-primary">AURAÉ Botanical Cleansing Balm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function switchGuide(targetId) {
+                // Update tabs
+                const tabs = document.querySelectorAll('.guide-tab');
+                tabs.forEach(tab => {
+                    tab.classList.remove('bg-secondary', 'text-primary', 'shadow-sm', 'font-bold', 'border-stone-200');
+                    tab.classList.add('border-transparent', 'hover:bg-stone-50', 'text-stone-600', 'font-semibold');
+                });
+                event.currentTarget.classList.add('bg-secondary', 'text-primary', 'shadow-sm', 'font-bold', 'border-stone-200');
+                event.currentTarget.classList.remove('border-transparent', 'hover:bg-stone-50', 'text-stone-600', 'font-semibold');
+
+                // Update panels
+                const panels = document.querySelectorAll('.guide-panel');
+                panels.forEach(panel => {
+                    panel.classList.add('hidden', 'opacity-0');
+                    panel.classList.remove('opacity-100');
+                });
+
+                const targetPanel = document.getElementById('guide-' + targetId);
+                if (targetPanel) {
+                    targetPanel.classList.remove('hidden');
+                    setTimeout(() => {
+                        targetPanel.classList.remove('opacity-0');
+                        targetPanel.classList.add('opacity-100');
+                    }, 20);
+                }
+            }
+        </script>
+
+        <!-- SECTION 5: CLIENT TESTIMONIALS -->
+        <section class="py-24 bg-secondary border-t border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-accent uppercase tracking-widest text-sm font-bold mb-3 block">Guest Testimonials</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Celebrated Transformations</h2>
+                    <p class="text-stone-700 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Read how our customized hair therapies and luxury cosmetics empower our guests with radiant confidence.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div>
+                            <div class="flex text-amber-600 mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <p class="text-stone-700 italic mb-6 leading-relaxed">
+                                "My hair was severely damaged from excessive bleaching. The Molecular Keratin and peptide ritual literally resurrected my curls. It feels like silk and looks so vibrant!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
+                                alt="Elena Vance" class="w-12 h-12 rounded-full object-cover border-2 border-stone-300">
+                            <div>
+                                <h4 class="font-bold text-primary text-sm">Elena Vance</h4>
+                                <span class="text-xs text-stone-600">Keratin &amp; Color Guest</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                        <div>
+                            <div class="flex text-amber-600 mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <p class="text-stone-700 italic mb-6 leading-relaxed">
+                                "The Scalp Trichology Spa is the most relaxing treatment on earth. The microscope camera showed the difference immediately—my scalp felt so refreshed and hair shedding dropped noticeably."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+                                alt="Sophia Caldwell" class="w-12 h-12 rounded-full object-cover border-2 border-stone-300">
+                            <div>
+                                <h4 class="font-bold text-primary text-sm">Sophia Caldwell</h4>
+                                <span class="text-xs text-stone-600">Scalp Spa Guest</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <div class="flex text-amber-600 mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <p class="text-stone-700 italic mb-6 leading-relaxed">
+                                "AURAÉ did my bridal makeup and hair styling. They custom blended a mineral foundation that looked luminous in every photo. I felt like a queen all day!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+                                alt="Julianne Moore" class="w-12 h-12 rounded-full object-cover border-2 border-stone-300">
+                            <div>
+                                <h4 class="font-bold text-primary text-sm">Julianne Moore</h4>
+                                <span class="text-xs text-stone-600">Bridal Cosmetics Guest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CTA BANNER -->
+        <section class="relative py-28 overflow-hidden bg-primary text-white">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070&auto=format&fit=crop"
+                    alt="Salon Ambience" class="w-full h-full object-cover opacity-20 object-center">
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-white leading-tight">
+                    Begin Your Hair &amp; Beauty Transformation
+                </h2>
+                <p class="text-lg md:text-xl text-stone-200 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Reserve your private suite session today. Every first appointment includes a full scalp diagnostic and tailored cosmetic consultation.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="btn-secondary shadow-xl font-bold">Book Your Appointment</a>
+                    <a href="pricing.html" class="btn-outline text-white border-white hover:bg-white hover:text-primary">
+                        View Ritual Pricing
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary pt-20 pb-12 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Col -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6 inline-flex group" aria-label="AURAÉ Home">
+                        <div class="w-11 h-11 rounded-xl bg-[#331d17] flex items-center justify-center p-1.5 border border-stone-800 shadow-md group-hover:scale-105 group-hover:border-accent transition-all duration-300">
+                            <img src="assets/images/logo.svg" alt="AURAÉ Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-bold tracking-[0.1em] text-primary group-hover:text-accent transition-colors">AURAÉ</span>
+                            <span class="text-[9px] uppercase tracking-[0.25em] font-semibold text-stone-600">Hair Care &amp; Cosmetics</span>
+                        </div>
+                    </a>
+                    <p class="text-stone-700 text-sm leading-relaxed mb-6">
+                        An elevated sanctuary dedicated to clean botanical cosmetics and transformative trichological hair care. Nourish your beauty with integrity.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Instagram"
+                            class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center text-primary hover:bg-accent hover:text-white hover:border-accent transition-colors shadow-sm">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook"
+                            class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center text-primary hover:bg-accent hover:text-white hover:border-accent transition-colors shadow-sm">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Col 1 -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-5 text-primary">The Atelier</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">About Our Studio</a></li>
+                        <li><a href="contact.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Contact &amp; Location</a></li>
+                        <li><a href="pricing.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Treatment Pricing</a></li>
+                        <li><a href="aftercare.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Aftercare &amp; Longevity</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Col 2 -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-5 text-primary">Signature Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Keratin Nanoplastia</a></li>
+                        <li><a href="services.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Scalp Trichology Detox</a></li>
+                        <li><a href="services.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Bespoke Balayage &amp; Gloss</a></li>
+                        <li><a href="services.html" class="text-stone-700 hover:text-accent transition-colors text-sm font-medium">Clean Mineral Cosmetics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-5 text-primary">Beauty Newsletter</h4>
+                    <p class="text-stone-700 text-sm mb-4 leading-relaxed">
+                        Receive seasonal hair health guides and early access to bespoke cosmetic releases.
+                    </p>
+                    <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to AURAÉ!');">
+                        <input type="email" placeholder="Your email address"
+                            class="bg-white border border-stone-300 px-4 py-3 rounded focus:outline-none focus:border-accent text-sm text-stone-900 placeholder-stone-500 w-full"
+                            required>
+                        <button type="submit" class="btn-primary py-3 w-full text-xs uppercase tracking-widest font-bold">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-stone-700">&copy; 2026 AURAÉ Hair Care &amp; Cosmetics Atelier. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex gap-4 text-sm text-stone-700">
+                        <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+                    </div>
+                    <!-- Back to Top Button -->
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top"
+                        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all duration-300 shadow-sm border border-stone-200">
+                        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 800, once: true });
+        }
+    </script>
+</body>
+
+</html>
